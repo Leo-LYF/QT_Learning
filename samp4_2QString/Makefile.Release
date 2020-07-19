@@ -17,8 +17,8 @@ CXXFLAGS      = -fno-keep-inline-dllexport -pipe -O2 -std=gnu++11 -Wextra -Wall 
 INCPATH       = -I. -I..\..\5.9\mingw53_32\include -I..\..\5.9\mingw53_32\include\QtWidgets -I..\..\5.9\mingw53_32\include\QtGui -I..\..\5.9\mingw53_32\include\QtANGLE -I..\..\5.9\mingw53_32\include\QtCore -Irelease -I. -I..\..\5.9\mingw53_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -lmingw32 -LE:\Qt\Qt5.9.0\5.9\mingw53_32\lib E:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libqtmain.a -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib -lshell32 E:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Widgets.a E:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Gui.a E:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Core.a 
-QMAKE         = E:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe
+LIBS        =        -lmingw32 -LF:\Qt\Qt5.9.0\5.9\mingw53_32\lib F:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libqtmain.a -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib -lshell32 F:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Widgets.a F:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Gui.a F:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Core.a 
+QMAKE         = F:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe
 IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
@@ -36,9 +36,9 @@ MKDIR         = mkdir
 INSTALL_FILE    = copy /y
 INSTALL_PROGRAM = copy /y
 INSTALL_DIR     = xcopy /s /q /y /i
-QINSTALL_FILE   = E:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe -install qinstall file
-QINSTALL_PROGRAM = E:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe -install qinstall program
-QINSTALL_DIR     = E:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe -install qinstall directory
+QINSTALL_FILE   = F:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe -install qinstall file
+QINSTALL_PROGRAM = F:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe -install qinstall program
+QINSTALL_DIR     = F:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe -install qinstall directory
 
 ####### Output directory
 
@@ -207,7 +207,7 @@ release/moc_widget.cpp: ../../5.9/mingw53_32/include/QtWidgets/QWidget \
 		widget.h \
 		release/moc_predefs.h \
 		../../5.9/mingw53_32/bin/moc.exe
-	E:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -IE:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -IE:/Qt/Qt5.9.0/QtProject/samp4_2QString -IE:/Qt/Qt5.9.0/5.9/mingw53_32/include -IE:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -IE:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -IE:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -IE:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -IE:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IE:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward widget.h -o release\moc_widget.cpp
+	F:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -IF:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -IF:/Qt/Qt5.9.0/QtProject/samp4_2QString -IF:/Qt/Qt5.9.0/5.9/mingw53_32/include -IF:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -IF:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -IF:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -IF:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -IE:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IE:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IE:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward widget.h -o release\moc_widget.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -216,7 +216,7 @@ compiler_uic_clean:
 	-$(DEL_FILE) ui_widget.h
 ui_widget.h: widget.ui \
 		../../5.9/mingw53_32/bin/uic.exe
-	E:\Qt\Qt5.9.0\5.9\mingw53_32\bin\uic.exe widget.ui -o ui_widget.h
+	F:\Qt\Qt5.9.0\5.9\mingw53_32\bin\uic.exe widget.ui -o ui_widget.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:

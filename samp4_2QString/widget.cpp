@@ -166,82 +166,106 @@ void Widget::on_pushButton_10_clicked()
 
 void Widget::on_pushButton_11_clicked()
 {//toUpper()函数
-    QString str1,str2;
-    str1=ui->comboBox1->currentText();
-    str2=str1.toUpper();
+    QString str1, str2;
+
+    str1 = ui->comboBox1->currentText();
+
+    str2 = str1.toUpper();
 
     ui->edtResult->setText(str2);
 }
 
 void Widget::on_pushButton_12_clicked()
 {//toLower()函数
-    QString str1,str2;
-    str1=ui->comboBox1->currentText();
-    str2=str1.toLower();
+    QString str1, str2;
+
+    str1 = ui->comboBox1->currentText();
+
+    str2 = str1.toLower();
 
     ui->edtResult->setText(str2);
+
 }
 
 void Widget::on_pushButton_13_clicked()
 {//trimmed()函数
-    QString str1;
-    str1=ui->comboBox1->currentText();
-    str1=str1.trimmed();
+    QString str1, str2;
 
-    ui->edtResult->setText(str1);
+    str1 = ui->comboBox1->currentText();
 
-}
-
-void Widget::on_pushButton_14_clicked()
-{//section()函数
-    int i;
-    QString str1,str2,str3;
-    str1=ui->comboBox1->currentText();
-    i=ui->spinBox->value();
-//    str2=str1.section('\\',2,2);
-    str3=ui->comboBox2->currentText();
-    if (QString::compare(str3,"\\",Qt::CaseInsensitive)==0)
-        str2=str1.section('\\',i,i+1); //
-    else
-        str2=str1.section(str3,i,i+1); //
+    str2 = str1.trimmed();
 
     ui->edtResult->setText(str2);
 }
 
+void Widget::on_pushButton_14_clicked()
+{//section()函数
+    QString str1, str2, str3;
+
+    int i = ui->spinBox->value();
+
+    str1 = ui->comboBox1->currentText();
+
+    str2 = ui->comboBox2->currentText();
+
+    if (QString::compare(str2, "\\",Qt::CaseSensitive) == 0)
+    {
+        str3 = str1.section("\\", i, i+1);
+    }
+    else
+    {
+        str3 = str1.section(str2, i, i+1);
+    }
+
+    ui->edtResult->setText(str3);
+}
+
 void Widget::on_pushButton_15_clicked()
 {//left()函数
-    QString str1,str2;
-    str1=ui->comboBox1->currentText();
-    int v=ui->spinBox->value();
-    str2=str1.left(v);
+    QString str1, str2;
+
+    int i = ui->spinBox->value();
+
+    str1 = ui->comboBox1->currentText();
+
+    str2 = str1.left(i);
+
     ui->edtResult->setText(str2);
 }
 
 void Widget::on_pushButton_16_clicked()
 {//right()函数
-    QString str1,str2;
-    str1=ui->comboBox1->currentText();
-    int cnt=str1.size();
-    int v=ui->spinBox->value();
-    str2=str1.right(cnt-v-1);
+    QString str1, str2;
+
+    uint i = ui->spinBox->value();
+
+    str1 = ui->comboBox1->currentText();
+
+    str2 = str1.right(i);
+
     ui->edtResult->setText(str2);
 }
 
 void Widget::on_pushButton_17_clicked()
 {//simplified()函数
-    QString str1;
-    str1=ui->comboBox1->currentText();
-    str1=str1.simplified();
-    ui->edtResult->setText(str1);
+    QString str1, str2;
+
+    str1 = ui->comboBox1->currentText();
+
+    str2 = str1.simplified();
+
+    ui->edtResult->setText(str2);
 }
 
 void Widget::on_pushButton_18_clicked()
 {//isNull()函数
-    QString str1;
-    str1=ui->comboBox1->currentText();
-    bool chk;
-    chk=str1.isNull();
+    QString str1 = ui->comboBox1->currentText();
+
+    bool chk = str1.isNull();
+
     ui->checkBox->setChecked(chk);
+
     ui->checkBox->setText("isNull()");
+
     ui->checkBox->sizeHint();
 }
