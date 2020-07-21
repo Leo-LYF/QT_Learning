@@ -67,71 +67,90 @@ void Dialog::on_calendarWidget_selectionChanged()
 { //在日历上选择日期
     QDate date = ui->calendarWidget->selectedDate();    //读取选择的日期时间
 
-    QString str1 = date.toString("yyyy年M月d日"); //转换为字符串
+    QString str1 = date.toString("yyyy年MM月d日"); //转换为字符串
 
     ui->editCalendar->setText(str1);    //字符串显示日期
 }
 
 void Dialog::on_btnSetTime_clicked()
 { //字符串转换为QTime
-    QString str=ui->editTime->text(); //读取字符串表示的时间
-    //    str=str.trimmed();//去掉空格
+    QString str = ui->editTime->text();    //读取字符串表示的时间
+
+    str.trimmed();  //    str=str.trimmed();//去掉空格
+
     if (!str.isEmpty())
     {
-        QTime tm=QTime::fromString(str,"hh:mm:ss"); //从字符串转换为QTime
-        ui->timeEdit->setTime(tm); //设置时间
+        QTime time = QTime::fromString(str,"hh:mm:ss");   //从字符串转换为QTime
+
+        ui->timeEdit->setTime(time); //设置时间
     }
 }
 
 void Dialog::on_btnSetDate_clicked()
 {//字符串转换为 QDate
-    QString str=ui->editDate->text(); //读取字符串表示的日期
-//    str=str.trimmed();//去掉空格
+    QString str = ui->editDate->text(); //读取字符串表示的日期
+
+    str.trimmed();  //    str=str.trimmed();//去掉空格
+
     if (!str.isEmpty())
     {
-        QDate dt=QDate::fromString(str,"yyyy-MM-dd");//从字符串转换为 QDate
-        ui->dateEdit->setDate(dt);//设置日期
+        QDate date = QDate::fromString(str,"yyyy/MM/dd");   //从字符串转换为 QDate
+
+        ui->dateEdit->setDate(date);    //设置日期
     }
 }
 
 void Dialog::on_btnSetDateTime_clicked()
 {//字符串转换为 QDateTime
-    QString str=ui->editDateTime->text();//读取字符串表示的日期
-    str=str.trimmed();//去掉空格
+    QString str = ui->editDateTime->text(); //读取字符串表示的日期
+
+    str.trimmed();  //去掉空格
+
     if (!str.isEmpty())
     {
-        QDateTime datetime=QDateTime::fromString(str,"yyyy-MM-dd hh:mm:ss"); //从字符串转换为 QDateTime
-        ui->dateTimeEdit->setDateTime(datetime);//设置日期时间
+        QDateTime dateTime = QDateTime::fromString(str,"yyyy/MM/dd hh:mm:ss"); //从字符串转换为 QDateTime
+
+        ui->dateTimeEdit->setDateTime(dateTime);    //设置日期时间
     }
 }
 
 void Dialog::on_btnSetIntv_clicked()
 { //设置定时器周期
-    fTimer->setInterval(ui->spinBoxIntv->value()); //设置定时器的周期
+    fTimer->setInterval(ui->spinBoxIntv->value());  //设置定时器的周期
 }
 
 void Dialog::on_btnStart_clicked()
 {
-    fTimer->start();//定时器开始工作
-    fTimeCounter.start();//计时器开始工作
-//更新各按键的状态
-    ui->btnStart->setEnabled(false);
-    ui->btnStop->setEnabled(true);
+    fTimer->start();    //定时器开始工作
+
+    fTimeCounter.start();   //计时器开始工作
+
+    //更新各按键的状态
     ui->btnSetIntv->setEnabled(false);
+
+    ui->btnStart->setEnabled(false);
+
+    ui->btnStop->setEnabled(true);
 }
 
 void Dialog::on_btnStop_clicked()
 {
     fTimer->stop(); //定时器停止
 
-    int tmMsec=fTimeCounter.elapsed();//毫秒数
-    int ms=tmMsec%1000; //余数毫秒
-    int sec=tmMsec/1000; //整秒
+    int tmMsec = fTimeCounter.elapsed();    //毫秒数
 
-    QString str=QString::asprintf("流逝时间：%d 秒，%d 毫秒",sec,ms);
+    int ms = tmMsec % 1000;//余数毫秒
+
+    int sec = tmMsec / 1000;//整秒
+
+    QString str = QString::asprintf("流逝时间：%d 秒，%d 毫秒",sec,ms);
+
     ui->LabElapsTime->setText(str); //显示流逝的时间
 
-    ui->btnStart->setEnabled(true); //更新按键状态
+    //更新按键状态
+    ui->btnSetIntv->setEnabled(false);
+
+    ui->btnStart->setEnabled(true);
+
     ui->btnStop->setEnabled(false);
-    ui->btnSetIntv->setEnabled(true);
 }
