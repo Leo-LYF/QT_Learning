@@ -46,7 +46,10 @@ void Widget::on_chkBoxEditable_clicked(bool checked)
 
 void Widget::on_comboBox_currentIndexChanged(const QString &arg1)
 { //comboBox选择一个条目时，文本添加到 plainTextEdit
-    ui->plainTextEdit->appendPlainText(arg1);
+    if (!arg1.isEmpty())
+    {//用来排除"初始化列表"按键产生的空白内容
+        ui->plainTextEdit->appendPlainText(arg1);
+    }
 }
 
 void Widget::on_btnClearText_clicked()

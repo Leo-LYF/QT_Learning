@@ -1,0 +1,4 @@
+﻿#忽略Debug文件夹下的文件:
+
+**/debug/
+**/release/
