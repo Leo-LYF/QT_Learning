@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.1
+** Created by: Qt User Interface Compiler version 5.9.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -156,7 +156,7 @@ public:
         toolBox->setMaximumSize(QSize(300, 16777215));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
-        page->setGeometry(QRect(0, 0, 150, 179));
+        page->setGeometry(QRect(0, 0, 150, 185));
         gridLayout = new QGridLayout(page);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -204,7 +204,7 @@ public:
         toolBox->addItem(page, icon7, QString::fromUtf8("QListWidget\346\223\215\344\275\234"));
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        page_2->setGeometry(QRect(0, 0, 150, 179));
+        page_2->setGeometry(QRect(0, 0, 150, 185));
         verticalLayout_4 = new QVBoxLayout(page_2);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -242,7 +242,7 @@ public:
         toolBox->addItem(page_2, icon8, QString::fromUtf8("QTreeWidget\346\223\215\344\275\234"));
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
-        page_3->setGeometry(QRect(0, 0, 150, 179));
+        page_3->setGeometry(QRect(0, 0, 150, 185));
         QIcon icon9;
         icon9.addFile(QStringLiteral(":/images/icons/412.bmp"), QSize(), QIcon::Normal, QIcon::Off);
         toolBox->addItem(page_3, icon9, QString::fromUtf8("QTableWidget\346\223\215\344\275\234"));
@@ -379,7 +379,7 @@ public:
         QObject::connect(actQuit, SIGNAL(triggered()), MainWindow, SLOT(close()));
         QObject::connect(actSelPopMenu, SIGNAL(triggered()), actSelInvs, SLOT(trigger()));
 
-        toolBox->setCurrentIndex(0);
+        toolBox->setCurrentIndex(1);
         tabWidget->setCurrentIndex(0);
 
 

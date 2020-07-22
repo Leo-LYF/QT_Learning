@@ -253,12 +253,12 @@ void MainWindow::on_listWidget_customContextMenuRequested(const QPoint &pos)
 
 void MainWindow::on_toolBox_currentChanged(int index)
 {
-    ui->tabWidget->setCurrentIndex(index);//ToolBox当前页与tabWidget的当前页联动
+    ui->tabWidget->setCurrentIndex(index);  //ToolBox当前页与tabWidget的当前页联动
 }
 
 void MainWindow::on_tabWidget_currentChanged(int index)
 {
-    ui->toolBox->setCurrentIndex(index);
+    ui->toolBox->setCurrentIndex(index);    //ToolBox当前页与tabWidget的当前页联动
 }
 
 void MainWindow::on_actSelALL_triggered()

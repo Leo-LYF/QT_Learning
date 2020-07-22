@@ -37,9 +37,9 @@ private slots:
 
     void on_listWidget_customContextMenuRequested(const QPoint &pos);   //弹出菜单
 
-    void on_toolBox_currentChanged(int index); //ToolBox当前组变化时，显示TabWidget相应的页面
+    void on_toolBox_currentChanged(int index);  //ToolBox当前组变化时，显示TabWidget相应的页面
 
-    void on_tabWidget_currentChanged(int index);
+    void on_tabWidget_currentChanged(int index);    //TabWidget当前组变化时，显示ToolBox相应的页面
 
     void on_actSelALL_triggered(); //全选
 

@@ -60,7 +60,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
@@ -68,11 +68,11 @@
         <x>0</x>
         <y>0</y>
         <width>150</width>
-        <height>179</height>
+        <height>185</height>
        </rect>
       </property>
       <attribute name="icon">
-       <iconset>
+       <iconset resource="res.qrc">
         <normaloff>:/images/icons/410.bmp</normaloff>:/images/icons/410.bmp</iconset>
       </attribute>
       <attribute name="label">
@@ -176,11 +176,11 @@
         <x>0</x>
         <y>0</y>
         <width>150</width>
-        <height>179</height>
+        <height>185</height>
        </rect>
       </property>
       <attribute name="icon">
-       <iconset>
+       <iconset resource="res.qrc">
         <normaloff>:/images/icons/408.bmp</normaloff>:/images/icons/408.bmp</iconset>
       </attribute>
       <attribute name="label">
@@ -230,11 +230,11 @@
         <x>0</x>
         <y>0</y>
         <width>150</width>
-        <height>179</height>
+        <height>185</height>
        </rect>
       </property>
       <attribute name="icon">
-       <iconset>
+       <iconset resource="res.qrc">
         <normaloff>:/images/icons/412.bmp</normaloff>:/images/icons/412.bmp</iconset>
       </attribute>
       <attribute name="label">
@@ -409,7 +409,7 @@
            <enum>Checked</enum>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="res.qrc">
             <normaloff>:/images/icons/check2.ico</normaloff>:/images/icons/check2.ico</iconset>
           </property>
           <property name="flags">
@@ -424,7 +424,7 @@
            <enum>Unchecked</enum>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="res.qrc">
             <normaloff>:/images/icons/check2.ico</normaloff>:/images/icons/check2.ico</iconset>
           </property>
           <property name="flags">
@@ -477,7 +477,7 @@
   </widget>
   <action name="actListIni">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/128.bmp</normaloff>:/images/icons/128.bmp</iconset>
    </property>
    <property name="text">
@@ -492,7 +492,7 @@
   </action>
   <action name="actListClear">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/delete1.bmp</normaloff>:/images/icons/delete1.bmp</iconset>
    </property>
    <property name="text">
@@ -504,7 +504,7 @@
   </action>
   <action name="actListInsert">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/424.bmp</normaloff>:/images/icons/424.bmp</iconset>
    </property>
    <property name="text">
@@ -519,7 +519,7 @@
   </action>
   <action name="actListAppend">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/316.bmp</normaloff>:/images/icons/316.bmp</iconset>
    </property>
    <property name="text">
@@ -534,7 +534,7 @@
   </action>
   <action name="actListDelete">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/324.bmp</normaloff>:/images/icons/324.bmp</iconset>
    </property>
    <property name="text">
@@ -576,7 +576,7 @@
   </action>
   <action name="actQuit">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/exit.bmp</normaloff>:/images/icons/exit.bmp</iconset>
    </property>
    <property name="text">
@@ -588,7 +588,7 @@
   </action>
   <action name="actSelPopMenu">
    <property name="icon">
-    <iconset>
+    <iconset resource="res.qrc">
      <normaloff>:/images/icons/124.bmp</normaloff>:/images/icons/124.bmp</iconset>
    </property>
    <property name="text">
@@ -600,7 +600,9 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actQuit</sender>
