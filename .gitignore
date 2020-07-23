@@ -2,3 +2,8 @@
 
 **/debug/
 **/release/
+**/Makefile
+**/Makefile.Release
+**/Makefile.Debug
+**/.qmake.stash
+**/*.user
