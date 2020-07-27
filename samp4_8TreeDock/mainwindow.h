@@ -25,6 +25,7 @@ private:
     float   pixRatio;//当前图片缩放比例
 
     void    iniTree();//目录树初始化
+
     void    addFolderItem(QTreeWidgetItem *parItem, QString dirName);//添加一个目录节点
 
     QString getFinalFolderName(const QString &fullPathName);//从目录全名称中获取最后的文件夹名称

@@ -93,26 +93,38 @@ void MainWindow::addImageItem(QTreeWidgetItem *parItem, QString aFilename)
 
 void MainWindow::displayImage(QTreeWidgetItem *item)
 {//显示图片,节点item存储的图片文件名
-    QString filename=item->data(colItem,Qt::UserRole).toString();//获取节点data里存的文件名
+    QString filename = item->data(colItem, Qt::UserRole).toString();    //获取节点data里存的文件名
+
     LabFileName->setText(filename);
-    curPixmap.load(filename); //从文件载入图片
+
+    curPixmap.load(filename);   //从文件载入图片
+
     on_actZoomFitH_triggered(); //自动适应高度显示
 
     ui->actZoomFitH->setEnabled(true);
+
     ui->actZoomFitW->setEnabled(true);
+
     ui->actZoomIn->setEnabled(true);
+
     ui->actZoomOut->setEnabled(true);
+
     ui->actZoomRealSize->setEnabled(true);
 }
 
 void MainWindow::changeItemCaption(QTreeWidgetItem *item)
 { //改变节点的标题文字
-    QString str="*"+item->text(colItem);  //节点标题前加“*”
-    item->setText(colItem,str); //设置节点标题
+    QString str = "*" + item->text(colItem); //节点标题前加“*”
 
-    if (item->childCount()>0) //如果有子节点
-    for (int i=0;i<item->childCount();i++) //遍历子节点
-       changeItemCaption(item->child(i));  //调用自己，可重入的函数
+    item->setText(colItem, str); //设置节点标题
+
+    if (item->childCount() > 0)//如果有子节点
+    {
+        for (int i = 0; i < item->childCount(); i++) //遍历子节点
+        {
+            changeItemCaption(item->child(i)); //调用自己，可重入的函数
+        }
+    }
 }
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -121,9 +133,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    LabFileName=new QLabel("");
+    LabFileName=new QLabel(""); //用于显示文件名
 
-    ui->statusBar->addWidget(LabFileName);
+    ui->statusBar->addWidget(LabFileName);  //添加QLabel组件
 
     this->setCentralWidget(ui->scrollArea); //设置中心布局组件
 
@@ -225,24 +237,28 @@ void MainWindow::on_actAddFiles_triggered()
 
 void MainWindow::on_actZoomOut_triggered()
 { //缩小显示
-    pixRatio=pixRatio*0.8; //在当前比例基础上乘以0.8
+    pixRatio = pixRatio * 0.8;  //在当前比例基础上乘以0.8
 
-    int w=pixRatio*curPixmap.width();// 显示宽度
-    int h=pixRatio*curPixmap.height();//显示高度
+    int w = pixRatio * curPixmap.width();   // 显示宽度
 
-    QPixmap pix=curPixmap.scaled(w,h); //图片缩放到指定高度和宽度，保持长宽比例
+    int h = pixRatio * curPixmap.height();  //显示高度
+
+    QPixmap pix = curPixmap.scaled(w, h);   //图片缩放到指定高度和宽度，保持长宽比例
 
     ui->LabPicture->setPixmap(pix);
+
 }
 
 void MainWindow::on_actZoomIn_triggered()
 {//放大显示
-    pixRatio=pixRatio*1.2;//在当前比例基础上乘以0.8
+    pixRatio=pixRatio * 1.2;//在当前比例基础上乘以1.2
 
     int w=pixRatio*curPixmap.width();// 显示宽度
+
     int h=pixRatio*curPixmap.height();//显示高度
 
-    QPixmap pix=curPixmap.scaled(w,h);//图片缩放到指定高度和宽度，保持长宽比例
+    QPixmap pix=curPixmap.scaled(w, h);//图片缩放到指定高度和宽度，保持长宽比例
+
     ui->LabPicture->setPixmap(pix);
 }
 
