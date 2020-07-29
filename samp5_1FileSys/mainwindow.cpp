@@ -50,5 +50,4 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index)
     {
         ui->LabFileSize->setText(QString::asprintf("%.1f MB",sz / 1024.0));
     }
-
 }
